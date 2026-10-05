@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartStock AI | Inventory Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div><strong>SmartStock</strong><span>AI Inventory</span></div>
+    </div>
+    <nav>
+      <button class="nav-item active" data-section="dashboard">⌂ <span>Dashboard</span></button>
+      <button class="nav-item" data-section="inventory">▦ <span>Inventory</span></button>
+      <button class="nav-item" data-section="predictions">◔ <span>Demand Prediction</span></button>
+      <button class="nav-item" data-section="alerts">⚠ <span>Stockout Alerts</span></button>
+      <button class="nav-item" data-section="recommendations">✦ <span>Recommendations</span></button>
+      <button class="nav-item" data-section="stores">⌘ <span>Multi-Store</span></button>
+      <button class="nav-item" data-section="assistant">✧ <span>AI Assistant</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="demo-badge">DEMO MODE<br><small>Mock data for hackathon</small></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">INVENTORY INTELLIGENCE</div>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+      <div class="top-actions">
+        <span class="live-dot">● Live demo</span>
+        <button class="icon-btn" id="refreshBtn" title="Refresh">↻</button>
+        <div class="user">ST</div>
+      </div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <div class="hero">
+        <div>
+          <span class="pill">AI-powered decision support</span>
+          <h2>Know what to stock<br><span>before it becomes a problem.</span></h2>
+          <p>SmartStock AI predicts demand, identifies inventory risks, and recommends the next best action.</p>
+        </div>
+        <div class="hero-orb"><div class="orb-inner">AI</div></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><span>Total SKUs</span><strong>1,248</strong><small>Across 4 stores</small></div>
+        <div class="stat-card danger"><span>Stockout Risk</span><strong>18</strong><small>6 critical</small></div>
+        <div class="stat-card warning"><span>Overstock</span><strong>47</strong><small>₹2.84L tied up</small></div>
+        <div class="stat-card success"><span>Healthy Stock</span><strong>91%</strong><small>+4.2% this week</small></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><div><h3>Demand Forecast</h3><p>Predicted units for next 7 days</p></div><span class="select-like">Next 7 days ▾</span></div>
+          <div class="chart-wrap">
+            <div class="chart-y"><span>500</span><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div>
+            <div class="line-chart">
+              <svg viewBox="0 0 700 260" preserveAspectRatio="none">
+                <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#7c5cff" stop-opacity=".28"/><stop offset="100%" stop-color="#7c5cff" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,190 C45,180 65,130 110,150 S180,105 225,125 S290,65 335,90 S390,145 430,115 S500,75 545,105 S610,55 700,72 L700,260 L0,260 Z" fill="url(#area)"/>
+                <path d="M0,190 C45,180 65,130 110,150 S180,105 225,125 S290,65 335,90 S390,145 430,115 S500,75 545,105 S610,55 700,72" fill="none" stroke="#7c5cff" stroke-width="4"/>
+              </svg>
+              <div class="chart-x"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div><h3>Priority Alerts</h3><p>Items needing attention</p></div><button class="text-btn" data-go="alerts">View all →</button></div>
+          <div class="alert-list">
+            <div class="alert-item critical"><span class="alert-icon">!</span><div><b>Milk 1L</b><small>Stockout expected in 0.7 days</small></div><strong>CRITICAL</strong></div>
+            <div class="alert-item high"><span class="alert-icon">!</span><div><b>Wheat Bread</b><small>Stockout expected in 1.2 days</small></div><strong>HIGH</strong></div>
+            <div class="alert-item medium"><span class="alert-icon">!</span><div><b>Eggs 12 Pack</b><small>Stockout expected in 2.1 days</small></div><strong>MEDIUM</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div><h3>Smart Actions</h3><p>AI-generated recommendations based on current inventory</p></div><button class="text-btn" data-go="recommendations">See recommendations →</button></div>
+        <div class="action-grid">
+          <div class="action-card"><div class="action-icon purple">↗</div><div><b>Reorder 6 products</b><p>Prevent projected stockouts</p></div><span>→</span></div>
+          <div class="action-card"><div class="action-icon orange">↓</div><div><b>Reduce 8 purchase orders</b><p>Excess inventory detected</p></div><span>→</span></div>
+          <div class="action-card"><div class="action-icon green">⇄</div><div><b>Transfer 3 products</b><p>Balance stock between stores</p></div><span>→</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inventory" class="page">
+      <div class="section-intro"><div><h2>Inventory Management</h2><p>Monitor stock levels and inventory health across your network.</p></div><button class="primary-btn" id="addProduct">+ Add Product</button></div>
+      <div class="toolbar"><input id="inventorySearch" placeholder="Search product, SKU or category..."><select id="statusFilter"><option value="all">All statuses</option><option value="Healthy">Healthy</option><option value="Low Stock">Low Stock</option><option value="Overstock">Overstock</option><option value="Slow Moving">Slow Moving</option></select></div>
+      <div class="card table-card">
+        <table><thead><tr><th>Product</th><th>SKU</th><th>Store</th><th>Stock</th><th>Daily Demand</th><th>Days Cover</th><th>Status</th></tr></thead>
+        <tbody id="inventoryBody"></tbody></table>
+      </div>
+    </section>
+
+    <section id="predictions" class="page">
+      <div class="section-intro"><div><h2>Demand Prediction</h2><p>Forecast future demand using recent sales trends and seasonal signals.</p></div><span class="model-tag">MODEL: TREND + MOVING AVERAGE</span></div>
+      <div class="prediction-grid">
+        <div class="card prediction-main"><h3>7-Day Demand Forecast</h3><p class="muted">Selected product: <b>Milk 1L</b></p><div class="big-number">742 <small>units</small></div><div class="mini-bars"><i style="height:45%"></i><i style="height:55%"></i><i style="height:50%"></i><i style="height:65%"></i><i style="height:72%"></i><i style="height:86%"></i><i style="height:92%"></i></div><div class="forecast-labels"><span>Today</span><span>+1d</span><span>+2d</span><span>+3d</span><span>+4d</span><span>+5d</span><span>+6d</span></div></div>
+        <div class="card"><h3>Prediction Factors</h3><div class="factor"><span>Recent sales trend</span><b>+18%</b></div><div class="factor"><span>Weekend effect</span><b>+12%</b></div><div class="factor"><span>Promotion</span><b>+8%</b></div><div class="factor"><span>Seasonality</span><b>+5%</b></div></div>
+      </div>
+      <div class="card"><div class="card-head"><div><h3>Forecast Accuracy</h3><p>Prototype evaluation metrics</p></div></div><div class="accuracy"><div><strong>91.4%</strong><span>Forecast accuracy</span></div><div><strong>8.6%</strong><span>MAPE</span></div><div><strong>94%</strong><span>Risk detection</span></div></div></div>
+    </section>
+
+    <section id="alerts" class="page">
+      <div class="section-intro"><div><h2>Stockout Alerts</h2><p>Products projected to run out before replenishment.</p></div></div>
+      <div class="alert-cards">
+        <div class="risk-card critical"><div class="risk-top"><span class="risk-level">CRITICAL</span><span>0.7 days</span></div><h3>Milk 1L</h3><p>Current stock <b>80</b> · Predicted demand <b>110/day</b></p><div class="progress"><i style="width:22%"></i></div><button class="outline-btn" data-product="Milk 1L">Reorder now</button></div>
+        <div class="risk-card high"><div class="risk-top"><span class="risk-level">HIGH</span><span>1.2 days</span></div><h3>Wheat Bread</h3><p>Current stock <b>38</b> · Predicted demand <b>31/day</b></p><div class="progress"><i style="width:38%"></i></div><button class="outline-btn" data-product="Wheat Bread">Reorder now</button></div>
+        <div class="risk-card medium"><div class="risk-top"><span class="risk-level">MEDIUM</span><span>2.1 days</span></div><h3>Eggs 12 Pack</h3><p>Current stock <b>62</b> · Predicted demand <b>29/day</b></p><div class="progress"><i style="width:56%"></i></div><button class="outline-btn" data-product="Eggs 12 Pack">Review</button></div>
+      </div>
+    </section>
+
+    <section id="recommendations" class="page">
+      <div class="section-intro"><div><h2>Smart Reorder Recommendations</h2><p>Actionable purchase suggestions generated from demand, stock and lead time.</p></div></div>
+      <div class="card table-card"><table><thead><tr><th>Product</th><th>Current Stock</th><th>Predicted Demand</th><th>Lead Time</th><th>Recommended Order</th><th>Reason</th><th>Action</th></tr></thead><tbody>
+        <tr><td><b>Milk 1L</b></td><td>80</td><td>110</td><td>1 day</td><td><strong class="green-text">+50</strong></td><td><span class="status critical-bg">Stockout risk</span></td><td><button class="small-btn approve">Approve</button></td></tr>
+        <tr><td><b>Wheat Bread</b></td><td>38</td><td>31</td><td>1 day</td><td><strong class="green-text">+45</strong></td><td><span class="status high-bg">High demand</span></td><td><button class="small-btn approve">Approve</button></td></tr>
+        <tr><td><b>Cooking Oil 1L</b></td><td>240</td><td>75</td><td>3 days</td><td><strong>0</strong></td><td><span class="status warning-bg">Overstock</span></td><td><button class="small-btn">Hold</button></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section id="stores" class="page">
+      <div class="section-intro"><div><h2>Multi-Store Inventory</h2><p>Compare stock health and identify transfer opportunities.</p></div></div>
+      <div class="store-grid">
+        <div class="store-card"><div class="store-head"><h3>Anna Nagar</h3><span class="healthy-dot">Healthy</span></div><strong>94%</strong><span>Stock health</span><div class="store-stats"><b>312</b><small>SKUs</small><b>4</b><small>Risks</small></div></div>
+        <div class="store-card"><div class="store-head"><h3>Velachery</h3><span class="healthy-dot">Healthy</span></div><strong>91%</strong><span>Stock health</span><div class="store-stats"><b>298</b><small>SKUs</small><b>7</b><small>Risks</small></div></div>
+        <div class="store-card"><div class="store-head"><h3>Adyar</h3><span class="warn-dot">Attention</span></div><strong>84%</strong><span>Stock health</span><div class="store-stats"><b>321</b><small>SKUs</small><b>12</b><small>Risks</small></div></div>
+        <div class="store-card"><div class="store-head"><h3>Porur</h3><span class="healthy-dot">Healthy</span></div><strong>93%</strong><span>Stock health</span><div class="store-stats"><b>317</b><small>SKUs</small><b>5</b><small>Risks</small></div></div>
+      </div>
+      <div class="card"><div class="card-head"><div><h3>Suggested Transfers</h3><p>Move excess stock to locations with higher demand.</p></div></div><div class="transfer"><div><b>Milk 1L</b><span>Adyar → Anna Nagar</span></div><strong>+35 units</strong><button class="small-btn approve">Review</button></div><div class="transfer"><div><b>Peanut Butter</b><span>Velachery → Porur</span></div><strong>+20 units</strong><button class="small-btn approve">Review</button></div></div>
+    </section>
+
+    <section id="assistant" class="page">
+      <div class="assistant-shell">
+        <div class="assistant-head"><div class="ai-avatar">✦</div><div><h2>SmartStock AI Assistant</h2><p>Ask questions about your inventory data.</p></div></div>
+        <div id="chatMessages" class="chat-messages">
+          <div class="message ai"><div class="bubble"><b>SmartStock AI</b><br>Hello! I can help you understand stock risks, demand forecasts, slow-moving products and reorder actions. Try asking: <em>“What should I reorder today?”</em></div></div>
+        </div>
+        <div class="quick-prompts"><button>What should I reorder today?</button><button>Which products may stock out?</button><button>Show slow-moving products</button><button>Which store has excess inventory?</button></div>
+        <div class="chat-input"><input id="chatInput" placeholder="Ask SmartStock AI..."><button id="sendChat">Send</button></div>
+        <p class="disclaimer">Prototype assistant uses demo inventory data. Predictions are decision-support suggestions, not guaranteed outcomes.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
